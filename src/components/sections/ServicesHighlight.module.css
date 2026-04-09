@@ -1,0 +1,28 @@
+.section {
+  padding-block: var(--spacing-24);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-12);
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-10);
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
