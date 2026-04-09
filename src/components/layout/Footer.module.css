@@ -1,0 +1,214 @@
+.footer {
+  background: var(--color-primary-dark);
+  color: var(--color-text-on-dark-muted);
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--spacing-6);
+  padding-block: var(--spacing-16) var(--spacing-8);
+}
+
+/* ── Top ────────────────────────────── */
+.top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--spacing-12);
+}
+
+@media (max-width: 768px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+}
+
+/* ── Brand ──────────────────────────── */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.logo {
+  display: inline-flex;
+  gap: 0;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.logoText {
+  color: var(--color-white);
+}
+
+.logoAccent {
+  color: var(--color-secondary);
+}
+
+.brandDesc {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-on-dark-muted);
+  max-width: 340px;
+}
+
+/* ── Columns ────────────────────────── */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.columnTitle {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.columnLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.columnLink {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-on-dark-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.columnLink:hover {
+  color: var(--color-white);
+}
+
+/* ── Contact ────────────────────────── */
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-on-dark-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contactLink:hover {
+  color: var(--color-white);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-on-dark-muted);
+}
+
+.contactIcon {
+  font-size: var(--font-size-base);
+  flex-shrink: 0;
+}
+
+/* ── Divider ────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--color-border-light);
+  margin-block: var(--spacing-8);
+}
+
+/* ── Bottom ─────────────────────────── */
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-on-dark-muted);
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  background: #25d366;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.whatsappBtn:hover {
+  background: #20bc5a;
+  transform: translateY(-1px);
+}
+
+/* ── Floating WhatsApp ───────────────── */
+.floatingWhatsapp {
+  position: fixed;
+  bottom: var(--spacing-6);
+  right: var(--spacing-6);
+  z-index: 50;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: #25d366;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  transition: transform var(--transition-spring), box-shadow var(--transition-fast);
+  animation: pulse-glow-green 2.5s ease-in-out infinite;
+}
+
+.floatingWhatsapp:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+}
+
+@keyframes pulse-glow-green {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  50%       { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.65); }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: var(--spacing-4);
+  }
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .floatingWhatsapp {
+    bottom: var(--spacing-4);
+    right: var(--spacing-4);
+    width: 48px;
+    height: 48px;
+  }
+}
